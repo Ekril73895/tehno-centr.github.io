@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Базовая разметка HTML</title>
+  <style>
+   
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Техподдержка Техно-Центр</h1>
+    <ul>
+      <li><a>Почта: info@32b.su </a></li>
+      <li><a>Номер:  +7 (4832) 30-99-88 </a></li>
+      <li><a href="login.php">Админка</a></li>
+      <li><a href="https://тахографы.рус">Наш сайт</a></li>
+    </ul>
+  </div>
+ <div class="wrapper">
+    <div class="form">
+     <form action="db.php" id="form" class="form_body" id="feedback-form" action="process_form.php" method="POST" enctype="multipart/form-data">
+        <h1 class="form_title">Форма обратной связи</h1>
+         
+         <div class="form_item">
+         <label for="formName" class="form_label">ФИО:</label>
+         <input id="formName" type="text" name="name" class="form_input _req" >
+         </div>
+         
+         <div class="form_item">
+         <label for="formEmail" class="form_label" >Email:</label>
+         <input id="formEmail" type="text" name="Email" class="form_input _req _email" >
+         </div>
+         
+         <div class="form_item">
+         <label for="formNumber" class="form_label">Номер телефона:</label>
+         <input id="formNumber" type="text" name="Number" class="form_input " >
+         </div>
+         
+         <div class="form_item">
+         <label for="formMassage" class="form_label">Расскажите о проблеме:</label>
+         <textarea name="message" id="formMessage" class="form_input" ></textarea>
+         </div>
+         
+         
+         <div class="form_item">
+         <div class="checkbox">
+             <input id="forAgreement" checked type="checkbox" name="agreement " class="checkbox_input " >
+             <label for="forAgreement" class="checkbox_label">Нажимая кнопку «Отправить», я даю свое согласие на обработку моих персональных данных, в соответствии с Федеральным законом от 27.07.2006 года №152-ФЗ «О персональных данных», на условиях и для целей, определенных в Согласии на обработку персональных данных </label>
+             </div>
+         </div>
+            <div class="form_item">
+             <button type="submit" class="form_button" name="formSubmit">Отправить</button>
+         </div>
+        </form>
+     </div>
+    </div>
+ <div class="footer">
+    <p>Компания «Техно-Центр» уже много лет существует на рынке и занимается обслуживанием и установкой тахографических устройств на транспорт иностранного и отечественного производителя.</p>
+  </div>
+   
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+  $('#form').submit(function(e) {
+    e.preventDefault(); 
+
+    $.ajax({
+      type: 'POST',
+      url: 'db.php', 
+      data: $(this).serialize(),
+      success: function(response) {
+        
+        alert(response);
+      },
+      error: function(xhr, status, error) {
+        
+        alert('An error occurred: ' + error);
+      }
+    });
+  });
+});
+</script>
+</body>
+</html>

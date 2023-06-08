@@ -1,0 +1,48 @@
+ul {
+    line-height: 50px;
+    background-color: yellow;
+}
+
+li {
+    display: inline-block;
+}
+
+a{
+    margin-right: 100px;
+}
+
+.name{
+    position: absolute;
+    height: 100px;
+    width: 200px;
+
+    text-align: center;
+}
+
+.email{
+    position: absolute;
+    left: 210px;
+    height: 100px;
+    width: 300px;
+  
+    text-align: center;
+    
+}
+.number{
+    position: absolute;
+    left: 515px;
+    height: 100px;
+    width: 200px;
+  
+    text-align: center;
+}
+
+.message{
+    position: absolute;
+    left: 720px;
+    height: 100px;
+    width: 500px;
+   
+    text-align: center;
+}
+
