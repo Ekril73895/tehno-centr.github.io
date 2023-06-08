@@ -1,5 +1,5 @@
 <?php
-$spar1 = "localhost";
+$spar1 = "127.0.0.1:3306";
 $spar2 = "root";
 $spar3 = "";
 $spar4 = "my_bd";
